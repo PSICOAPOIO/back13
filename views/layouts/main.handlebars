@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+  
+  <link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+    <div class="links">
+        <a href="/blog/meditacao"> Meditação</a>
+        <a href="/blog/ansiedade">Ansiedade</a>
+        <a href="/blog/depressao">Depressão</a>
+        <a href="/blog/profissionais">Profissionais</a>
+        <a href="/blog/estresse"> Estresse</a>
+        <a href="/blog/autoavaliacao">Autoavaliação</a>
+        
+        {{#if session.userid}} 
+            <a class="linkForum" href="/post/forum">Fórum</a>
+        {{else}}
+            <a class="linkForum"  href="/login">Fórum</a>
+        {{/if}}
+    </div>
+    
+
+          
+    
+    
+
+                
+
+<div class="divBody">
+    {{{body}}}
+</div>
+    <script>
+        /*
+        document.querySelector(".divBody").style.display="none";
+        linkForum=document.querySelector(".linkForum");
+        linkForum.onclick= function(){
+            divBody=document.querySelector(".divBody");
+                divBody.style.display="block";
+
+        }
+        */
+        
+    </script>
+</body>
+                

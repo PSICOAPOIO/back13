@@ -1,0 +1,129 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profissionais.css">
+    <title>Profissionais</title>
+</head>
+<body>
+     <header class="cabecalho">
+        <nav>
+            <div id="olaX">
+                <img id="x" src="/imagens/x.png"/>
+                <h1 id="ola">Olá!</h1>
+            </div>
+            <ul>
+                <li>
+                    <img class= "navImg" src="/imagens/home.png" />
+                    <a href="">HOME</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/meditacao.png" />
+                    <a href="/meditacao">Meditação</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/depressao.png" />
+                    <a href="/depressao">Depressão</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/ansiedade.png" />
+                    <a href="/ansiedade">Ansiedade</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/estresse.png" />
+                    <a href="/estresse">Estresse</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/profissionais.png" />
+                    <a href="/profissionais">Profissionais</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/autoavaliacao.png" />
+                    <a href="/autoavaliacao">Autoavaliação</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/forum.png" />
+                    {{#if session.userid}} 
+                        <a class="linkForum" href="/post/forum">Fórum</a>
+                    {{else}}
+                        <a class="linkForum"  href="/login">Fórum</a>
+                                        
+                    {{/if}}
+                </li>
+            </ul>
+        </nav>
+        <div id="menu">
+            <img src="/imagens/menu.png"/>
+        </div>
+        <div id="logo">
+            <img src="/imagens/logo.png"/>
+        </div>
+    </header>
+    <h1>Profissionais</h1>
+    <div class="linha">
+        <div >
+            <img src="/imagens/roger.jpg"/>
+            <h2>Roger Ferreira dos Santos</h2>
+            <p >Psicólogo</p>
+            <h3>CONTATO</h3>
+            <h4>(51)4002-8922</h4>
+        </div>
+        <div>
+            <img  src="/imagens/ana.jpg"/>
+            <h2 >Ana</h2>
+            <p >Psicóloga</p>
+            <h3 >CONTATO</h3>
+            <h4>(51)8965-8922</h4>
+        </div>
+        <div>
+            <img  src="/imagens/psicologa.jpg"/>
+            <h2 >Larissa de Macedo</h2>
+            <p >Psicóloga especialista em Lorem ipsum dolor</p>
+            <h3 >CONTATO</h3>
+            <h4>(51)2587-8922</h4>
+        </div>
+    </div>
+
+    <div class="linha">
+        <div >
+            <img src="/imagens/psicologa.jpg"/>
+            <h2>Aline da Silva</h2>
+            <p >Psicóloga especialista em Lorem ipsum dolor</p>
+            <h3>CONTATO</h3>
+            <h4>(51)5411-8922</h4>
+        </div>
+        <div>
+            <img  src="/imagens/psicologo.jpg"/>
+            <h2 >Carlos Alberto</h2>
+            <p >Psicólogo especialista em Lorem ipsum dolor</p>
+            <h3 >CONTATO</h3>
+            <h4>(51)9910-8922</h4>
+        </div>
+        <div>
+            <img  src="/imagens/psicologa.jpg"/>
+            <h2 >Maria de Macedo</h2>
+            <p >Psicóloga especialista em Lorem ipsum dolor</p>
+            <h3 >CONTATO</h3>
+            <h4>(51)9807-8922</h4>
+        </div>
+    </div>
+    <script>
+        document.querySelector("nav").style.display="none";
+        icon=document.querySelector("#menu");
+        icon.onclick= function(){
+            nav=document.querySelector("nav");
+            if(nav.style.display=="none")
+                nav.style.display="block";
+
+            else 
+                nav.style.display="none";
+                
+            }
+
+        x = document.querySelector("#x");
+        x.onclick=function(){
+            nav=document.querySelector("nav");
+            nav.style.display="none";
+        }
+    </script>
+</body>

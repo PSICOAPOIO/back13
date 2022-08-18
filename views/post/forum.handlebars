@@ -1,0 +1,105 @@
+ {{{body}}}
+ <link rel="stylesheet" href="/css/forum.css">
+ <div class="removerForum">
+    <header class="cabecalho">
+        <nav>
+            <div id="olaX">
+                <img id="x" src="/imagens/x.png"/>
+                <h1 id="ola">Olá!</h1>
+            </div>
+            <ul>
+                <li>
+                    <img class= "navImg" src="/imagens/home.png" />
+                    <a href="">HOME</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/meditacao.png" />
+                    <a href="/meditacao">Meditação</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/depressao.png" />
+                    <a href="/depressao">Depressão</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/ansiedade.png" />
+                    <a class="a" href="/ansiedade">Ansiedade</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/estresse.png" />
+                    <a href="/estresse">Estresse</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/profissionais.png" />
+                    <a href="/profissionais">Profissionais</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/autoavaliacao.png" />
+                    <a href="/autoavaliacao">Autoavaliação</a>
+                </li>
+                <li>
+                    <img class= "navImg" src="/imagens/forum.png" />
+                    {{#if session.userid}} 
+                        <a class="linkForum" href="/post/forum">Fórum</a>
+                    {{else}}
+                        <a class="linkForum"  href="/login">Fórum</a>
+                                        
+                    {{/if}}
+                </li>
+            </ul>
+        </nav>
+        <div id="menu">
+            <img src="/imagens/menu.png"/>
+        </div>
+        <div id="logo">
+            <img src="/imagens/logo.png"/>
+        </div>
+    </header>
+   
+    <div class="corpo">
+        <div class="tittle-container">
+            <h3>Suas publicações: </h3>
+            <a href="/post/add" id="publicar">Publicar</a>
+            
+        </div>
+    
+        <ul>
+            {{#each posts}}
+                <li>
+                    <span class="label">{{this.conteudo}} </span>
+                    <span class="actions">
+                        <form action="/post/remove" method="POST">
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <input type="submit" class="btn" value="Excluir">
+                        </form>
+                    </span>
+                </li>
+            {{/each}}
+        </ul>
+        
+    </div> 
+    
+    <div id="fim">
+
+    </div>
+    <script>
+        document.querySelector("nav").style.display="none";
+        icon=document.querySelector("#menu");
+        icon.onclick= function(){
+            nav=document.querySelector("nav");
+            if(nav.style.display=="none")
+                nav.style.display="block";
+
+            else 
+                nav.style.display="none";
+                
+            }
+
+        x = document.querySelector("#x");
+        x.onclick=function(){
+            nav=document.querySelector("nav");
+            nav.style.display="none";
+        }
+    </script>
+
+
+ </div>
